@@ -15,8 +15,14 @@ CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
     title VARCHAR(240) NOT NULL,
-    description TEXT NOT NULL,
+    model VARCHAR (240) NOT NULL,
+    year INT NOT NULL,
+    mileage INT NOT NULL,
+    color VARCHAR (50) NOT NULL,
+    car_condition VARCHAR(100) NOT NULL,
+    post_date DATE,
+    description VARCHAR(500) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
-        ON DELETE CASCADE
+    ON DELETE CASCADE
 );
