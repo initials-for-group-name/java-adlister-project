@@ -4,7 +4,79 @@ public class Ad {
     private long id;
     private long userId;
     private String title;
+
+    private String model;
+
+    private String year;
+
+    private String mileage;
+
+    private String color;
+
+    private String carCondition;
+
+    private String date;
+
     private String description;
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(String mileage) {
+        this.mileage = mileage;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getCarCondition() {
+        return carCondition;
+    }
+
+    public void setCarCondition(String carCondition) {
+        this.carCondition = carCondition;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Ad(long userId, String title, String model, String year, String mileage, String color, String carCondition, String description) {
+        this.userId = userId;
+        this.title = title;
+        this.model = model;
+        this.year = year;
+        this.mileage = mileage;
+        this.color = color;
+        this.carCondition = carCondition;
+        this.description = description;
+    }
 
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
