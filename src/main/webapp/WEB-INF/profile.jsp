@@ -17,8 +17,11 @@
     <div>
         <c:forEach var="ad" items="${ads}">
             <div class="col-md-6">
-                <h2>${ad.title}</h2>
-                <p>${ad.description}</p>
+                <h2><a href="/ad-edit?id=${ad.id}">${ad.title}</a></h2>
+                <form action="/profile" method="POST">
+                    <button name="ad.id" value="${ad.id}">Delete</button>
+                </form>
+
             </div>
         </c:forEach>
     </div>

@@ -12,7 +12,24 @@ import java.io.IOException;
 
 @WebServlet(name = "controllers.ViewProfileServlet", urlPatterns = "/profile")
 public class ViewProfileServlet extends HttpServlet {
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        User user = (User) request.getSession().getAttribute("user");
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
+        request.setAttribute("ads", DaoFactory.getAdsDao().userAdds(user));
+
+        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String adId = request.getParameter("ad.id");
+        System.out.println(adId);
+        DaoFactory.getAdsDao().delete(Long.parseLong(adId));
         User user = (User) request.getSession().getAttribute("user");
 
         if (request.getSession().getAttribute("user") == null) {
@@ -20,7 +37,6 @@ public class ViewProfileServlet extends HttpServlet {
             return;
         }
         request.setAttribute("ads", DaoFactory.getAdsDao().userAdds(user));
-
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 }
