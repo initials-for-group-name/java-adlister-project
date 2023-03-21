@@ -19,6 +19,16 @@ public class Ad {
 
     private String description;
 
+    private String picture;
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
     public String getModel() {
         return model;
     }
@@ -78,6 +88,32 @@ public class Ad {
         this.description = description;
     }
 
+    public Ad(long id, long userId, String title, String model, String year, String mileage, String color, String carCondition, String date, String description, String picture) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.model = model;
+        this.year = year;
+        this.mileage = mileage;
+        this.color = color;
+        this.carCondition = carCondition;
+        this.date = date;
+        this.description = description;
+        this.picture = picture;
+    }
+
+    public Ad(long userId, String title, String model, String year, String mileage, String color, String carCondition, String description, String picture) {
+        this.userId = userId;
+        this.title = title;
+        this.model = model;
+        this.year = year;
+        this.mileage = mileage;
+        this.color = color;
+        this.carCondition = carCondition;
+        this.description = description;
+        this.picture = picture;
+    }
+
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
         this.userId = userId;
@@ -91,7 +127,10 @@ public class Ad {
         this.description = description;
     }
 
-    public long getId() {
+    public Ad() {
+    }
+
+    public Long getId() {
         return id;
     }
 

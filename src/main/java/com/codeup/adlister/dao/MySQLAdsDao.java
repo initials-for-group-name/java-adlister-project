@@ -65,7 +65,7 @@ public class MySQLAdsDao implements Ads {
         PreparedStatement stmt = null;
         try {
 
-            String sql = "SELECT * FROM ads JOIN users u on u.id = ads.user_id WHERE user_id=?";
+            String sql =  "SELECT * FROM ads JOIN users u on u.id = ads.user_id WHERE user_id=?";
 
             stmt = connection.prepareStatement(sql);
             stmt.setLong(1, user.getId());
@@ -76,12 +76,34 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public Ad getById(long id) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE id=?");
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractAd(rs);
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
             rs.getLong("user_id"),
             rs.getString("title"),
-            rs.getString("description")
+            rs.getString("model"),
+            rs.getString("year"),
+            rs.getString("mileage"),
+            rs.getString("color"),
+            rs.getString("car_condition"),
+            rs.getString("post_date"),
+            rs.getString("description"),
+            rs.getString("picture")
         );
     }
 
