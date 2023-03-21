@@ -1,5 +1,6 @@
 USE adlister_project_db;
 
+DROP TABLE IF EXISTS user_profile;
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
 
@@ -20,8 +21,9 @@ CREATE TABLE ads (
     mileage INT NOT NULL,
     color VARCHAR (50) NOT NULL,
     car_condition VARCHAR(100) NOT NULL,
-    post_date DATE,
+    post_date TIMESTAMP,
     description VARCHAR(500) NOT NULL,
+    picture VARCHAR(500),
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
     ON DELETE CASCADE
@@ -40,4 +42,4 @@ CREATE TABLE user_profile (
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
     ON DELETE CASCADE
-)
+);

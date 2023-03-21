@@ -51,6 +51,18 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    @Override
+    public User getUserById(long id) {
+        String query = "SELECT * FROM ads JOIN users u on u.id = ads.user_id WHERE user_id=?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, id);
+            return extractUser(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a user by username", e);
+        }
+    }
+
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
