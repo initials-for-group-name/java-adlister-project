@@ -15,4 +15,8 @@ public interface Ads {
 
     Ad getById(long id);
 
+    void delete(long id);
+
+    void update(String model, int year, int mileage, String color, String condition, String description, String picture, long id);
+
 }

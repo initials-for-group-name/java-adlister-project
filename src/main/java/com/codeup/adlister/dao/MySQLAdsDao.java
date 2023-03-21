@@ -41,7 +41,7 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, model, year, mileage, color, car_condition, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO ads(user_id, title, model, year, mileage, color, car_condition, post_date, description) VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
@@ -90,6 +90,39 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
+
+    @Override
+    public void delete(long id) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("DELETE FROM ads WHERE id = ?");
+            stmt.setLong(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    @Override
+    public void update(String model, int year, int mileage, String color, String condition, String description, String picture, long id) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("UPDATE ads SET model = ?, year = ?, mileage = ?, " +
+                    "color = ?, car_condition = ?, description = ?, picture = ? WHERE id = ?");
+            stmt.setString(1, model);
+            stmt.setInt(2, year);
+            stmt.setInt(3, mileage);
+            stmt.setString(4, color);
+            stmt.setString(5, condition);
+            stmt.setString(6, description);
+            stmt.setString(7, picture);
+            stmt.setLong(8, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
