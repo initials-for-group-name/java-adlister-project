@@ -18,7 +18,66 @@
             <p>${ad.description}</p>
         </div>
     </c:forEach>
+
 </div>
+
+<div class="container">
+    <form action="/results" method="post">
+        <label for="model">Model:</label>
+        <select id="model" name="model">
+            <option value="">--Select Model--</option>
+            <c:forEach var="ad" items="${ads}">
+                <option value="${ad.model}">${ad.model}</option>
+            </c:forEach>
+        </select>
+
+        <label for="year">Year:</label>
+        <select id="year" name="year">
+            <option value="">--Select Year--</option>
+            <c:forEach var="ad" items="${ads}">
+                <option value="${ad.year}">${ad.year}</option>
+            </c:forEach>
+        </select>
+
+        <label for="mileage">Mileage:</label>
+        <select id="mileage" name="mileage">
+            <option value="">--Select Mileage--</option>
+            <c:forEach var="ad" items="${ads}">
+                <option value="${ad.mileage}">${ad.mileage}</option>
+            </c:forEach>
+        </select>
+
+        <label for="condition">Condition:</label>
+        <select id="condition" name="condition">
+            <option value="">--Select Condition--</option>
+            <c:forEach var="ad" items="${ads}">
+                <option value="${ad.carCondition}">${ad.carCondition}</option>
+            </c:forEach>
+        </select>
+
+        <label for="color">Color:</label>
+        <select id="color" name="color">
+            <option value="">--Select Color--</option>
+            <c:forEach var="ad" items="${ads}">
+                <option value="${ad.color}">${ad.color}</option>
+            </c:forEach>
+        </select>
+
+        <button type="submit">Search</button>
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
