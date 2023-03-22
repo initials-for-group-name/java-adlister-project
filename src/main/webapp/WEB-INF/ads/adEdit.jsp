@@ -79,10 +79,10 @@
                         <label for="model" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Model</label>
                         <select name="model" id="model" class="shadow-sm  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
                             <option value="Placeholder" class="block mb-2 text-sm font-medium text-gray-400 dark:text-black" name="year">Choose a Model</option>
-                            <option value="model-s" name="model">Model S</option>
-                            <option value="model-3" name="model">Model 3</option>
-                            <option value="model-x" name="model">Model X</option>
-                            <option value="model-y" name="model">Model Y</option>
+                            <option value="Model-S" name="model">Model S</option>
+                            <option value="Model-3" name="model">Model 3</option>
+                            <option value="Model-X" name="model">Model X</option>
+                            <option value="Model-Y" name="model">Model Y</option>
                         </select>
                     </div>
 
@@ -118,15 +118,15 @@
                         <label for="model" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Color</label>
                         <select name="color" id="color" class="shadow-sm  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="year">
                             <option value="Placeholder" class="block mb-2 text-sm font-medium text-gray-400 dark:text-white" name="color">Choose a Color</option>
-                            <option value="blue-metallic" name="color">Blue Metallic</option>
-                            <option value="brown-metallic" name="color">Brown Metallic</option>
-                            <option value="gray-metallic" name="color">Gray Metallic</option>
-                            <option value="green-metallic" name="color">Green Metallic</option>
-                            <option value="sliver-metallic" name="color">Sliver Metallic</option>
-                            <option value="pearl-white-multi-coat" name="color">Pearl White Multi-Coat</option>
-                            <option value="red-multi-coat" name="color">Red Multi-Coat</option>
-                            <option value="solid-black" name="color">Solid Black</option>
-                            <option value="solid-white" name="color">Solid White</option>
+                            <option value="Blue-Metallic" name="color">Blue Metallic</option>
+                            <option value="Brown-Metallic" name="color">Brown Metallic</option>
+                            <option value="Gray-Metallic" name="color">Gray Metallic</option>
+                            <option value="Green-Metallic" name="color">Green Metallic</option>
+                            <option value="Sliver-Metallic" name="color">Sliver Metallic</option>
+                            <option value="Pearl-White-Multi-Coat" name="color">Pearl White Multi-Coat</option>
+                            <option value="Red-Multi-Coat" name="color">Red Multi-Coat</option>
+                            <option value="Solid-Black" name="color">Solid Black</option>
+                            <option value="Solid-White" name="color">Solid White</option>
                         </select>
                     </div>
 
@@ -135,10 +135,10 @@
                         <select name="condition" id="condition" class="shadow-sm  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
                             <option value="Placeholder" class="block mb-2 text-sm font-medium text-gray-400 dark:text-white" name="year">Choose a Condition</option>
 
-                            <option value="poor" name="condition">Poor</option>
-                            <option value="fair" name="condition">Fair</option>
-                            <option value="good" name="condition">Good</option>
-                            <option value="excellent" name="condition">Excellent</option>
+                            <option value="Poor" name="condition">Poor</option>
+                            <option value="Fair" name="condition">Fair</option>
+                            <option value="Good" name="condition">Good</option>
+                            <option value="Excellent" name="condition">Excellent</option>
                         </select>
                     </div>
 

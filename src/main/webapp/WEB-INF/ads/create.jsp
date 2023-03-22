@@ -63,15 +63,15 @@
                 <label for="color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Color</label>
                 <select name="color" id="color" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
                     <option value="Placeholder" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" name="year">Choose a Model</option>
-                    <option value="Blue-metallic" name="color">Blue Metallic</option>
-                    <option value="Brown-metallic" name="color">Brown Metallic</option>
-                    <option value="Gray-metallic" name="color">Gray Metallic</option>
-                    <option value="Green-metallic" name="color">Green Metallic</option>
-                    <option value="Sliver-metallic" name="color">Sliver Metallic</option>
-                    <option value="Pearl-white-multi-coat" name="color">Pearl White Multi-Coat</option>
-                    <option value="Red-multi-coat" name="color">Red Multi-Coat</option>
-                    <option value="Solid-black" name="color">Solid Black</option>
-                    <option value="Solid-white" name="color">Solid White</option>
+                    <option value="Blue-Metallic" name="color">Blue Metallic</option>
+                    <option value="Brown-Metallic" name="color">Brown Metallic</option>
+                    <option value="Gray-Metallic" name="color">Gray Metallic</option>
+                    <option value="Green-Metallic" name="color">Green Metallic</option>
+                    <option value="Sliver-Metallic" name="color">Sliver Metallic</option>
+                    <option value="Pearl-White-Multi-coat" name="color">Pearl White Multi-Coat</option>
+                    <option value="Red-Multi-Coat" name="color">Red Multi-Coat</option>
+                    <option value="Solid-Black" name="color">Solid Black</option>
+                    <option value="Solid-White" name="color">Solid White</option>
                 </select>
             </div>
 
