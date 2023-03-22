@@ -9,6 +9,7 @@
     <title>User Profile</title>
 </head>
 <body>
+
 <!-- This is an example component -->
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
@@ -39,6 +40,7 @@
             <form method="post">
             <button type="submit" name="user.id" value="${sessionScope.user.id}"  class="w-[6em] text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete</button>
             </form>
+
 
         </div>
 
