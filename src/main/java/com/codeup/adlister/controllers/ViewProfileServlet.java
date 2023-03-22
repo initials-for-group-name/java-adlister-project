@@ -15,75 +15,107 @@ import java.util.List;
 @WebServlet(name = "controllers.ViewProfileServlet", urlPatterns = "/profile")
 public class ViewProfileServlet extends HttpServlet {
 
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (!isUserAuthenticated(request, response)) {
+
+        User user = (User) request.getSession().getAttribute("user");
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
             return;
         }
-
-        List<Ad> ads = getUserAds(request);
-
-        if (ads == null) {
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to retrieve user ads from database");
-            return;
-        }
+        request.setAttribute("ads", DaoFactory.getAdsDao().userAdds(user));
 
         //get user Id
         request.setAttribute("user", DaoFactory.getUsersDao().getUserId(user.getId()));
-
 
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (!isUserAuthenticated(request, response)) {
-            return;
-        }
-
         String adId = request.getParameter("ad.id");
         System.out.println(adId);
+        DaoFactory.getAdsDao().delete(Long.parseLong(adId));
+        User user = (User) request.getSession().getAttribute("user");
 
-        try {
-            DaoFactory.getAdsDao().delete(Long.parseLong(adId));
-        } catch (NumberFormatException e) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid ad ID");
-            return;
-        } catch (Exception e) {
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to delete ad from database");
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
             return;
         }
-
-        List<Ad> ads = getUserAds(request);
-
-        if (ads == null) {
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to retrieve user ads from database");
-            return;
-        }
-
-        request.setAttribute("ads", ads);
+        request.setAttribute("ads", DaoFactory.getAdsDao().userAdds(user));
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
-
-    private boolean isUserAuthenticated(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        User user = (User) request.getSession().getAttribute("user");
-
-        if (user == null) {
-            response.sendRedirect("/login");
-            return false;
-        }
-
-        return true;
-    }
-
-    private List<Ad> getUserAds(HttpServletRequest request) {
-        User user = (User) request.getSession().getAttribute("user");
-
-        try {
-            return DaoFactory.getAdsDao().userAdds(user);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 }
+
+
+//    @Override
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        if (!isUserAuthenticated(request, response)) {
+//            return;
+//        }
+//
+//        List<Ad> ads = getUserAds(request);
+//
+//        if (ads == null) {
+//            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to retrieve user ads from database");
+//            return;
+//        }
+//
+//        //get user Id
+//        request.setAttribute("user", DaoFactory.getUsersDao().getUserId(user.getId()));
+//
+//
+//        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+//    }
+//
+//    @Override
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        if (!isUserAuthenticated(request, response)) {
+//            return;
+//        }
+//
+//        String adId = request.getParameter("ad.id");
+//        System.out.println(adId);
+//
+//        try {
+//            DaoFactory.getAdsDao().delete(Long.parseLong(adId));
+//        } catch (NumberFormatException e) {
+//            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid ad ID");
+//            return;
+//        } catch (Exception e) {
+//            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to delete ad from database");
+//            return;
+//        }
+//
+//        List<Ad> ads = getUserAds(request);
+//
+//        if (ads == null) {
+//            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to retrieve user ads from database");
+//            return;
+//        }
+//
+//        request.setAttribute("ads", ads);
+//        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+//    }
+//
+//    private boolean isUserAuthenticated(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        User user = (User) request.getSession().getAttribute("user");
+//
+//        if (user == null) {
+//            response.sendRedirect("/login");
+//            return false;
+//        }
+//
+//        return true;
+//    }
+//
+//    private List<Ad> getUserAds(HttpServletRequest request) {
+//        User user = (User) request.getSession().getAttribute("user");
+//
+//        try {
+//            return DaoFactory.getAdsDao().userAdds(user);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
+//}

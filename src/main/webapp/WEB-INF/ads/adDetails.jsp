@@ -35,18 +35,17 @@
 
                 <hr class="h-px my-2 mb-5 bg-gray-200 border-0 dark:bg-gray-300">
 
-                <div class="text-black text-xl dark:text-black"><h3>Description</h3></div>
-                <div class="text-[15px] text-black-400"><p>${ad.description}</p></div>
+                <div class="text-[15px] mt-5 text-gray-400"><p>This ad was posted by</p></div>
+                <div class="text-[15px] text-black-400"><p>${user.username}</p></div>
+
                 <div class="text-[15px] mt-5 text-black-400 font-bold"><p>Contact email: </p></div>
                 <div class="text-[15px] mb-5 text-black-400"><p>${user.email}</p></div>
 
                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-300">
-                <div class="text-[15px] mt-5 text-gray-400"><p>This ad was posted by</p></div>
-                <div class="text-[15px] text-black-400"><p>${user.username}</p></div>
-                <form action="/profile" method="POST">
-                    <button type="submit" name="ad.id" value="${ad.id}" class="w-[6em] mr-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><a href="/ad-edit?id=${ad.id}&userId=${ad.userId}">Edit</a></button>
-                </form>
-                <a href="/ads" class="text-xl block mt-[10em] py-2 pl-3 pr-4 text-gray-700  md:p-0 dark:text-gray-700 dark:hover:text-gray-400">Back to Ads</a>
+                <div class="text-black text-xl dark:text-black"><h3>Description</h3></div>
+                <div class="text-[15px] text-black-400"><p>${ad.description}</p></div>
+
+                <a href="/ads" class="text-xl block mt-[5em] py-2 pl-3 pr-4 text-gray-700  md:p-0 dark:text-gray-700 dark:hover:text-gray-400">Back to Ads</a>
                 <a href="/ads" class="text-xl block py-2 pl-3 pr-4 text-gray-700  md:p-0 dark:text-gray-700 dark:hover:text-gray-400">Back to Your Profile</a>
 
             </div>
