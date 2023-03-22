@@ -63,16 +63,62 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    @Override
+    public User getUserId(long id) {
+        String query = "SELECT * FROM users WHERE id= ? ";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, id);
+            return extractUser(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a user by username", e);
+        }
+    }
+
+    @Override
+    public void delete(long id) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("DELETE FROM users WHERE id = ?");
+            stmt.setLong(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    @Override
+    public void update(String username, String lastname, String firstname, String phoneNumber, String email, String password, long id) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("UPDATE users SET username = ?, first_name = ?, last_name = ?, " +
+                    "phone_number = ?, email = ?, password = ?  WHERE id = ?");
+            stmt.setString(1, username);
+            stmt.setString(2, lastname);
+            stmt.setString(3, firstname);
+            stmt.setString(4, phoneNumber);
+            stmt.setString(5, email);
+            stmt.setString(6, password);
+            stmt.setLong(7, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
         }
         return new User(
-            rs.getLong("id"),
             rs.getString("username"),
-            rs.getString("email"),
-            rs.getString("password")
-        );
+                rs.getString("first_name"),
+                rs.getString("last_name"),
+                rs.getString("phone_number"),
+                rs.getString("email"),
+                rs.getString("password"),
+                rs.getLong("id")
+                );
     }
 
 }

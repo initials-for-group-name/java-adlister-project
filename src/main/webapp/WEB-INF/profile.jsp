@@ -48,6 +48,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
         <c:forEach var="ad" items="${ads}">
+
+
                 <div class="flex justify-center cursor-pointer hover:bg-gray-100 hover:scale-105 transition-all duration-300"  onclick="window.location.href='/ad-details?id=${ad.id}&userId=${ad.userId}'">
                     <div class="block w-[50em] rounded-lg bg-white shadow-lg bg-gray-50 dark:bg-gray-800">
                         <div>
@@ -103,6 +105,7 @@
 
     </div>
         </div>
+
     </div>
 </body>
 </html>
