@@ -8,12 +8,22 @@
     </jsp:include>
 </head>
 <body>
-    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen " aria-label="Sidebar">
+    <aside id="default-sidebar" class="hidden md:flex fixed top-0 left-0 z-40 w-64 h-screen " aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
             <ul class="space-y-2">
                 <li>
+
                     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg box-shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                        <div class="flex flex-col items-center justify-center mt-5 pb-10">
+                        <div class="flex flex-col items-center justify-center mt-1 pb-10">
+                            <div class ="w-full p-3 flex flex-initial">
+                                <a href = "/user-profile">
+                            <button id="dropdownButton" data-dropdown-toggle="dropdown" class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm" type="button">
+                                <span class="sr-only">Open dropdown</span>
+                                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                            </button>
+                                </a>
+                            </div>
+
                             <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="./images/profile.jpeg" alt="Bonnie image"/>
                             <h5 class="mb-1 text-center text-xl font-medium text-gray-900 dark:text-white">Welcome, ${sessionScope.user.username}!</h5>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Tesla Owner</span>

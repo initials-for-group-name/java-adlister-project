@@ -23,7 +23,7 @@
     </div>
 </nav>
 <!-- Aside-->
-<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 bg-white border-r border-gray-200 " aria-label="Sidebar">
+<aside id="logo-sidebar" class="fixed hidden md:flex top-0 left-0 z-40 w-64 h-screen pt-20 bg-white border-r border-gray-200 " aria-label="Sidebar">
     <div class="h-full px-3 pb-4 mt-5 overflow-y-auto bg-white">
         <ul class="space-y-2">
 
@@ -137,7 +137,7 @@
         <div class=" font-8xl text-[20px] font-bold mb-[2em]">All Posts</div>
 
 
-        <div class="grid grid-cols-3 gap-4 mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <!-- Card Template-->
             <c:forEach var="ad" items="${ads}">
 
