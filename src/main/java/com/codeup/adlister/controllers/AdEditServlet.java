@@ -13,7 +13,12 @@ import java.io.IOException;
 public class AdEditServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    String adId = request.getParameter("id");
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
+
+        String adId = request.getParameter("id");
 //        System.out.println(adId);
         request.setAttribute("ad", DaoFactory.getAdsDao().getById(Long.parseLong(adId)));
         request.getRequestDispatcher("/WEB-INF/ads/adEdit.jsp").forward(request, response);
