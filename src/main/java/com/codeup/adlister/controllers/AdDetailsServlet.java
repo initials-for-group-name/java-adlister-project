@@ -13,10 +13,6 @@ import java.io.IOException;
 public class AdDetailsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getSession().getAttribute("user") == null) {
-            response.sendRedirect("/login");
-            return;
-        }
 
         String id = request.getParameter("id");
         System.out.println("addId is: " + id);
