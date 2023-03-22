@@ -38,7 +38,7 @@
 
 
             <form method="post">
-            <button type="submit" name="user.id" value="${sessionScope.user.id}"  class="w-[6em] text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete</button>
+            <button type="submit" name="user.id" value="${sessionScope.user.id}"  class="w-[6em] ml-[2em] text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete</button>
             </form>
 
 
@@ -93,48 +93,5 @@
     </div>
 
 </div>
-
-
-<%--    <h1>Username: ${sessionScope.user.username}</h1>--%>
-<%--    <h3>First Name: ${sessionScope.user.firstname}</h3>--%>
-<%--    <h3>Last Name: ${sessionScope.user.lastname}</h3>--%>
-<%--    <h3>Phone Number: ${sessionScope.user.phoneNumber}</h3>--%>
-<%--    <h3>Email: ${sessionScope.user.email}</h3>--%>
-
-
-<%--    <form method="POST">--%>
-<%--        <button name="user.id" value="${sessionScope.user.id}">Delete</button>--%>
-<%--    </form>--%>
-
-<%--    <hr>
-
-            <form method="POST">--%>
-<%--        <input name="id" id="id" value="${sessionScope.user.id}" type="hidden"/>--%>
-<%--        <input name="password" id="password" value="${sessionScope.user.password}" type="hidden"/>--%>
-
-<%--        <div class="form-group">--%>
-<%--            <label for="username">Username</label>--%>
-<%--            <input name="username" id="username" value="${sessionScope.user.username}" type="text"/>--%>
-<%--        </div>--%>
-<%--        <div class="form-group">--%>
-<%--            <label for="firstname">First Name</label>--%>
-<%--            <input name="firstname" id="firstname" type="text"/>--%>
-<%--        </div>--%>
-<%--        <div class="form-group">--%>
-<%--            <label for="lastname">Last Name</label>--%>
-<%--            <input name="lastname" id="lastname" type="text"/>--%>
-<%--        </div>--%>
-<%--        <div class="form-group">--%>
-<%--            <label for="phone.number">Phone Number</label>--%>
-<%--            <input name="phone.number" id="phone.number" placeholder="123-456-1234" type="text"/>--%>
-<%--        </div>--%>
-<%--        <div class="form-group">--%>
-<%--            <label for="email">Email</label>--%>
-<%--            <input name="email" id="email" value="${sessionScope.user.email}" placeholder="abc@gmail" type="text"/>--%>
-<%--        </div>--%>
-
-<%--        <button name="submit">Submit</button>--%>
-<%--    </form>--%>
-
 </body>
 </html>

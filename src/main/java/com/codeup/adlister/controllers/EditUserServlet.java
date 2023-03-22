@@ -47,8 +47,6 @@ public class EditUserServlet extends HttpServlet {
             request.getSession().setAttribute("user", user);
             response.sendRedirect("/profile");
         }
-            //edit user
-
 
     }
 }

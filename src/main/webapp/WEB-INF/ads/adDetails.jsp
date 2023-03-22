@@ -53,10 +53,6 @@
         </div>
 
     </aside>
-
-
-
-
 </div>
 </body>
 </html>
