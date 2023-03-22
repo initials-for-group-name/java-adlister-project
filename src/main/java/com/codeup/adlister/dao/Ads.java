@@ -17,6 +17,6 @@ public interface Ads {
 
     void delete(long id);
 
-    void update(String model, int year, int mileage, String color, String condition, String description, String picture, long id);
+    void update(String title, String model, int year, int mileage, String color, String condition, String description, String picture, long id);
 
 }

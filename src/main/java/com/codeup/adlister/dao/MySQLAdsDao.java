@@ -104,19 +104,20 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public void update(String model, int year, int mileage, String color, String condition, String description, String picture, long id) {
+    public void update(String title, String model, int year, int mileage, String color, String condition, String description, String picture, long id) {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("UPDATE ads SET model = ?, year = ?, mileage = ?, " +
+            stmt = connection.prepareStatement("UPDATE ads SET title = ?, model = ?, year = ?, mileage = ?, " +
                     "color = ?, car_condition = ?, description = ?, picture = ? WHERE id = ?");
-            stmt.setString(1, model);
-            stmt.setInt(2, year);
-            stmt.setInt(3, mileage);
-            stmt.setString(4, color);
-            stmt.setString(5, condition);
-            stmt.setString(6, description);
-            stmt.setString(7, picture);
-            stmt.setLong(8, id);
+            stmt.setString(1, title);
+            stmt.setString(2, model);
+            stmt.setInt(3, year);
+            stmt.setInt(4, mileage);
+            stmt.setString(5, color);
+            stmt.setString(6, condition);
+            stmt.setString(7, description);
+            stmt.setString(8, picture);
+            stmt.setLong(9, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);

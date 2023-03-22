@@ -23,6 +23,7 @@ public class AdEditServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         long adId = Long.parseLong(request.getParameter("id"));
         //request parameter
+               String title = request.getParameter("title");
                String model = request.getParameter("model");
                int year =  Integer.parseInt(request.getParameter("year"));
                int mileage = Integer.parseInt(request.getParameter("mileage"));
@@ -31,7 +32,7 @@ public class AdEditServlet extends HttpServlet {
                String description = request.getParameter("description");
                String picture = request.getParameter("picture");
         //run dao factory update()
-        DaoFactory.getAdsDao().update(model, year, mileage, color, condition, description, picture, adId);
+        DaoFactory.getAdsDao().update(title, model, year, mileage, color, condition, description, picture, adId);
 //        response.sendRedirect("/ad-edit" + "?id=" + adId);
         response.sendRedirect("/profile");
     }
