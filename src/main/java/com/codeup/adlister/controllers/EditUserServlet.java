@@ -14,6 +14,10 @@ import java.io.IOException;
 public class EditUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
         request.getRequestDispatcher("/WEB-INF/userEditProfile.jsp").forward(request, response);
     }
 
@@ -24,6 +28,8 @@ public class EditUserServlet extends HttpServlet {
         if(request.getParameter("user.id") != null){
             String id = request.getParameter("user.id");
             DaoFactory.getUsersDao().delete(Long.parseLong(id));
+            request.getSession().removeAttribute("user");
+            request.getSession().invalidate();
             response.sendRedirect("/register");
 
         }else if(request.getParameter("submit") != null){
