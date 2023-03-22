@@ -20,7 +20,8 @@
     <form method="POST">
         <button name="user.id" value="${sessionScope.user.id}">Delete</button>
     </form>
-    <hr><form method="POST">
+    <hr>
+    <form method="POST">
         <input name="id" id="id" value="${sessionScope.user.id}" type="hidden"/>
         <input name="password" id="password" value="${sessionScope.user.password}" type="hidden"/>
         <div class="form-group">
