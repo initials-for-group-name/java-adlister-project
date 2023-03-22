@@ -17,13 +17,17 @@
     <div>
         <c:forEach var="ad" items="${ads}">
             <div class="col-md-6">
+<%--                send user to edit add--%>
                 <h2><a href="/ad-edit?id=${ad.id}">${ad.title}</a></h2>
+<%--                delete user--%>
                 <form action="/profile" method="POST">
                     <button name="ad.id" value="${ad.id}">Delete</button>
                 </form>
-
             </div>
+
         </c:forEach>
+        <%--                send user to edit profile--%>
+        <h2><a href="/user-profile">Edit Profile</a></h2>
     </div>
 </body>
 </html>
