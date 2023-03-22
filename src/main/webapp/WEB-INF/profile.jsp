@@ -61,10 +61,20 @@
                         </div>
                         <div class="flex flex-col space-between">
                             <div class="pr-6 pl-6 pb-6 pt-2">
+
+
                                 <h4 class="text-gray-500 text-[15px]">Posted by: ${user.username}</h4>
                                 <p class="mb-2 text-gray-500 text-[15px]">
                                         ${ad.date}
                                 </p>
+                                <div class = "flex justify-center items-center space-between w-full ">
+
+                                    <form action="/profile" method="POST">
+                                        <button type="submit" name="ad.id" value="${ad.id}" class="w-[6em] mr-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><a href="/ad-edit?id=${ad.id}&userId=${ad.userId}">Edit</a></button>
+                                        <button type="submit" name="ad.id" value="${ad.id}" class="w-[6em] text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete</button>
+                                    </form>
+
+                                </div>
                                 <h5
                                         class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                                     Tesla ${ad.model}
@@ -79,16 +89,9 @@
                                             ${ad.color}
                                     </p>
                                 </div>
-                                    <div class = "flex justify-center items-center space-between w-full ">
-
-                                        <form action="/profile" method="POST">
-                                            <button type="submit" name="ad.id" value="${ad.id}" class="w-[6em] mr-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><a href="/ad-edit?id=${ad.id}&userId=${ad.userId}">Edit</a></button>
-                                            <button type="submit" name="ad.id" value="${ad.id}" class="w-[6em] text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete</button>
-                                        </form>
-
-                                    </div>
 
                             </div>
+
 
                         </div>
 
