@@ -1,9 +1,38 @@
-# Finish Up your Adlister
+# Ad Lister Java III Project
 
-Follow the instructions and suggestions in [here](https://java.codeup.com/java-iii/finish-the-adlister)
+## Table of contents
 
-## Final branch
+- [Overview](#overview)
+- [Project Guidlines](#project-guidlines)
+- [Group Cohesivness](#group-cohesivness)
+- [Authors](#authors)
 
-Use this master branch as a base for your future features, this branch already has all the necessary code implemented up to the lesson on passwords including it's solution.
 
-You might have to change the default branch in your own fork so you can have the master branch as the the default and merge your contributions into it.
+## Overview
+
+- Create an ad listing webiste where users can view ad listings posted by other in addtion to creating a profile that allows them to post and edit there own ads for viewing.
+
+### Project Guidlines
+
+- users should be able to view their profile page when logged in
+- users should be able to fully CRUD user profile and ads
+- users should be able to search or sort ads
+- Include at least two of the following features:
+    - nav bar changes based on login / logout
+    - sticky forms
+    - ad show / details page
+    - a many-to-many relationship in the application
+- Include at least one of the following features:
+    - back end validation of form data
+    - error messages
+    - intended redirects
+- project consistently styled and uses grid layout
+- code documented with a README and comments
+
+### Group Cohesivness
+
+This was our first project that bridged the front and back-end aspects of web development. We each faced challenges that we previously have not encountered. Despite the difficulty, we all worked extremly well together and were able to contribute something to pull the project together.
+
+## Authors
+
+- Hung Ho, Randy Chu, Will Parry, Titus Williams
