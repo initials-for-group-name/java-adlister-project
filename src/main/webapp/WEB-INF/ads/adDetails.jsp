@@ -46,7 +46,7 @@
                 <div class="text-[15px] text-black-400"><p>${ad.description}</p></div>
 
                 <a href="/ads" class="text-xl block mt-[5em] py-2 pl-3 pr-4 text-gray-700  md:p-0 dark:text-gray-700 dark:hover:text-gray-400">Back to Ads</a>
-                <a href="/ads" class="text-xl block py-2 pl-3 pr-4 text-gray-700  md:p-0 dark:text-gray-700 dark:hover:text-gray-400">Back to Your Profile</a>
+                <a href="/profile" class="text-xl block py-2 pl-3 pr-4 text-gray-700  md:p-0 dark:text-gray-700 dark:hover:text-gray-400">Back to Your Profile</a>
 
             </div>
 
